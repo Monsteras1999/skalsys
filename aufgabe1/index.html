@@ -7,15 +7,9 @@
     <link rel="stylesheet" a href="css/bootstrap.css" />
     <title>ToDo List</title>
 </head>
-<!--inline: container genau so groß, wie sein inhalt platz braucht
-block: container genau so groß, wie sein parent-container platz bietet-->
 <body>
+    <div w3-include-html="content/navbar.html"></div>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>ToDo List</h1>
-            </div>
-        </div>
         <div class="row">
             <div class="col">
                 <table class="table table-hover">
@@ -39,7 +33,7 @@ block: container genau so groß, wie sein parent-container platz bietet-->
                                 </div>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="edittodo.html?id=1" role="button">edit</a>
+                                <a class="btn btn-primary btn-sm" href="content/edittodo.html?id=1" role="button">edit</a>
                                 <a class="btn btn-primary btn-sm" href="?delete&id=1" role="button">delete</a>
                             </td>
                         </tr>
@@ -53,7 +47,7 @@ block: container genau so groß, wie sein parent-container platz bietet-->
                                 </div>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-sm" href="edittodo.html?id=2" role="button">edit</a>
+                                <a class="btn btn-primary btn-sm" href="content/edittodo.html?id=2" role="button">edit</a>
                                 <a class="btn btn-primary btn-sm" href="?delete&id=2" role="button">delete</a>
                             </td>
                         </tr>
@@ -61,12 +55,12 @@ block: container genau so groß, wie sein parent-container platz bietet-->
                 </table>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col">
-                <a href="newtodo.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New ToDo</a>
-                <a href="disclaimer.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Disclaimer</a>
+                <a href="content/newtodo.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New ToDo</a>
+                <a href="content/disclaimer.html" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Disclaimer</a>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
@@ -75,5 +69,7 @@ block: container genau so groß, wie sein parent-container platz bietet-->
     <script src="js/jquery-3.4.0.slim.min.js"></script>
     <script src="js/popper.min.js"></script> <!-- https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md -->
     <script src="js/bootstrap.js"></script> <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+    <script src="js/own.js"></script>
+    <script>includeHTML();</script>
 </body>
 </html>
