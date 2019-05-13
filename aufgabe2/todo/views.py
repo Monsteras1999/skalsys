@@ -15,8 +15,19 @@ def index(request):
     context = {'task_list': task_list}
     return HttpResponse(template.render(context, request))
 
-def edit(request):
+def edit(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
-    template = loader.get_template('todo/content/edittodo.html')
-    context = {'task': task}
-    return HttpResponse(template.render(context, request))
+    return render(request, 'todo/content/edittodo.html', {'task': task})
+    # template = loader.get_template('todo/content/edittodo.html')
+    # context = {'task': task}
+    # return HttpResponse(template.render(context, request))
+
+def delete(request, task_id):
+    task = get_object_or_404(Task, pk=task_id)
+    return render(request, 'todo/content/deletetodo.html', {'task': task})
+
+def new(request):
+    return render(request, 'todo/content/newtodo.html', {})
+
+def disclaimer(request):
+    return render(request, 'todo/content/disclaimer.html', {})
