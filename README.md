@@ -5,12 +5,18 @@ Skalierbare Systeme SoSe 19
 
 # on Windows
 1. open cmd
-2. navigate to directory of ToDos App
-3. "py manage.py runserver"
-4. open http://127.0.0.1:8000/todos in Browser
+2. install django
+3. navigate to directory of ToDos App
+4. create a project "django-admin startproject todos" OR
+    use existing project "workon todos"
+5. start server "py manage.py runserver"
+6. open http://127.0.0.1:8000/todos in Browser
 
 # on Linux
 1. open console
-2. navigate to directory of ToDos App
-3. "python manage.py runserver"
-4. open http://127.0.0.1:8000/todos in Browser
+2. install django
+3. navigate to directory of ToDos App
+4. create a project "django-admin startproject todos" OR
+    use existing project "workon todos"
+5. start server "python manage.py runserver"
+6. open http://127.0.0.1:8000/todos in Browser
