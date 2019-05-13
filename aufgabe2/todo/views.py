@@ -67,7 +67,11 @@ def edit(request, task_id):
 
 def delete(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
-    return render(request, 'todo/content/deletetodo.html', {'task': task})
+    task.delete()
+    # Always return an HttpResponseRedirect after successfully dealings
+    # with POST data. This prevents data from being posted twice if a
+    # user hits the Back button.
+    return HttpResponseRedirect(reverse('todo:index'))
 
 def new(request):
     return render(request, 'todo/content/newtodo.html', {})
