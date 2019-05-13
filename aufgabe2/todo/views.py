@@ -11,16 +11,26 @@ from .models import Task
 
 def index(request):
     task_list = Task.objects.order_by('-deadline')
-    template = loader.get_template('todo/index.html')
-    context = {'task_list': task_list}
-    return HttpResponse(template.render(context, request))
+    return render(request, 'todo/index.html', {'task_list': task_list})
+
+def savenew(request):
+    try:
+        new_task = request.POST['todo']
+        new_deadline = request.POST['deadline']
+        new_progress = request.POST['progress']
+    except:
+        return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
+    else:
+        new_todo = Task(task_text=new_task, deadline=new_deadline, progress=new_progress)
+        new_todo.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('todo:index'))
 
 def edit(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
     return render(request, 'todo/content/edittodo.html', {'task': task})
-    # template = loader.get_template('todo/content/edittodo.html')
-    # context = {'task': task}
-    # return HttpResponse(template.render(context, request))
 
 def delete(request, task_id):
     task = get_object_or_404(Task, pk=task_id)

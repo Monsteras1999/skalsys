@@ -11,7 +11,9 @@ urlpatterns = [
     path('<int:task_id>/delete', views.delete, name='delete'),
     # ex: /todo/new
     path('new', views.new, name='new'),
-    # ex: /todo/new
+    # ex: /todo/savenew
+    path('savenew', views.savenew, name='savenew'),
+    # ex: /todo/disclaimer
     path('disclaimer', views.disclaimer, name='disclaimer')
 
 ]

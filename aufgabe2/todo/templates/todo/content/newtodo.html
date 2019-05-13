@@ -33,7 +33,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <form>
+                <form action="{% url 'todo:savenew' %}" method="post">
+                    {% csrf_token %}
                     <div class="form-row">
                         <div class="col-auto">
                             <input type="text" class="form-control" placeholder="ToDo" name="todo" />
@@ -46,17 +47,12 @@
                             <input type="text" class="form-control" placeholder="progress" name="progress" />
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-primary mb-2 btn-own">save</button>
+                            <input type="submit" class="btn btn-primary mb-2 btn-own" value="save" />
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col">
-                <a href="../index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">back</a>
-            </div>
-        </div> -->
     </div>
 
     <!-- How to use bootstrap -> https://www.youtube.com/watch?v=zcUUE0E_qAs -->
