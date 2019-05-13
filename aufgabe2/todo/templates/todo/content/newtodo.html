@@ -33,6 +33,7 @@
         </div>
         <div class="row">
             <div class="col">
+                {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
                 <form action="{% url 'todo:savenew' %}" method="post">
                     {% csrf_token %}
                     <div class="form-row">

@@ -7,6 +7,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     # ex: /todo/5/edit
     path('<int:task_id>/edit', views.edit, name='edit'),
+    # ex: /todo/5/saveedit
+    path('<int:task_id>/saveedit', views.saveedit, name='saveedit'),
     # ex: /todo/5/delete
     path('<int:task_id>/delete', views.delete, name='delete'),
     # ex: /todo/new

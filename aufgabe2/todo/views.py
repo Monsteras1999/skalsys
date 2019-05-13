@@ -10,14 +10,47 @@ from .models import Task
 # Create your views here.
 
 def index(request):
-    task_list = Task.objects.order_by('-deadline')
+    task_list = Task.objects.order_by('deadline')
     return render(request, 'todo/index.html', {'task_list': task_list})
+
+def saveedit(request, task_id):
+    task = get_object_or_404(Task, pk=task_id)
+    try:
+        new_task = request.POST['todo']
+        if not new_task:
+            return render(request, 'todo/content/edittodo.html', {'task': task, 'error_message': "An Error occured."})
+        new_deadline = request.POST['deadline']
+        if not new_deadline:
+            return render(request, 'todo/content/edittodo.html', {'task': task, 'error_message': "An Error occured."})
+        new_progress = request.POST['progress']
+        if int(new_progress)<0 or int(new_progress)>100:
+            return render(request, 'todo/content/edittodo.html', {'task': task, 'error_message': "An Error occured."})
+    except:
+        return render(request, 'todo/content/edittodo.html', {
+            'task': task,
+            'error_message': "An Error occured.",
+        })
+    else:
+        task.task_text = new_task
+        task.deadline = new_deadline
+        task.progress = new_progress
+        task.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+        return HttpResponseRedirect(reverse('todo:index'))
 
 def savenew(request):
     try:
         new_task = request.POST['todo']
+        if not new_task:
+            return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
         new_deadline = request.POST['deadline']
+        if not new_deadline:
+            return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
         new_progress = request.POST['progress']
+        if int(new_progress)<0 or int(new_progress)>100:
+            return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
     except:
         return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
     else:
