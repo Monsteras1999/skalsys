@@ -10,7 +10,7 @@ Skalierbare Systeme SoSe 19
 4. create a project "django-admin startproject todos" OR
     use existing project "workon todos"
 5. start server "py manage.py runserver"
-6. open http://127.0.0.1:8000/todos in Browser
+6. open http://127.0.0.1:8000/todo in Browser
 
 # on Linux
 1. open console
@@ -19,4 +19,4 @@ Skalierbare Systeme SoSe 19
 4. create a project "django-admin startproject todos" OR
     use existing project "workon todos"
 5. start server "python manage.py runserver"
-6. open http://127.0.0.1:8000/todos in Browser
+6. open http://127.0.0.1:8000/todo in Browser

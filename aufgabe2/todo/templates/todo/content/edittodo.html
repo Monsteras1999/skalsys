@@ -1,14 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" a href="../css/bootstrap.css" />
+    <link rel="stylesheet" a href="{% static 'todo/css/bootstrap.css' %}" />
     <title>Edit Todo</title>
 </head>
 <body>
-    <div w3-include-html="navbar_c.html"></div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html">ToDo List</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="newtodo.html">New</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="disclaimer.html">Disclaimer</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -36,16 +52,12 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="col">
-                <a href="../index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">back</a>
-            </div>
-        </div> -->
     </div>
-    <script src="../js/jquery-3.4.0.slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/own.js"></script>
-    <script>includeHTML();</script>
+
+    <!-- How to use bootstrap -> https://www.youtube.com/watch?v=zcUUE0E_qAs -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'todo/js/jquery-3.4.0.slim.min.js' %}"></script>
+    <script src="{% static 'todo/js/popper.min.js' %}"></script> <!-- https://github.com/FezVrasta/popper.js/blob/master/docs/_includes/tooltip-documentation.md -->
+    <script src="{% static 'todo/js/bootstrap.js' %}"></script> <!-- https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
 </body>
 </html>
