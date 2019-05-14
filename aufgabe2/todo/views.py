@@ -22,8 +22,8 @@ def saveedit(request, task_id):
         new_deadline = request.POST['deadline']
         if not new_deadline:
             return render(request, 'todo/content/edittodo.html', {'task': task, 'error_message': "An Error occured."})
-        new_progress = int(request.POST['progress'])
-        if new_progress<0 or new_progress>100:
+        new_progress = request.POST['progress']
+        if int(new_progress)<0 or int(new_progress)>100:
             return render(request, 'todo/content/edittodo.html', {'task': task, 'error_message': "An Error occured."})
     except:
         return render(request, 'todo/content/edittodo.html', {
@@ -48,8 +48,8 @@ def savenew(request):
         new_deadline = request.POST['deadline']
         if not new_deadline:
             return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
-        new_progress = int(request.POST['progress'])
-        if new_progress<0 or new_progress>100:
+        new_progress = request.POST['progress']
+        if int(new_progress)<0 or int(new_progress)>100:
             return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
     except:
         return render(request, 'todo/content/newtodo.html', {'error_message': "An Error occured."})
