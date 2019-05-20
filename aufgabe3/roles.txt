@@ -1,0 +1,12 @@
+product owner:
+- pflegt product backlog
+- Schnittstelle zwischen scrum master und stakeholdern
+
+scrum master:
+- koordiniert Aufgaben im Entwicklungsteam
+
+qa manager:
+
+
+infrastructure manager:
+

@@ -1,0 +1,24 @@
+role: user
+can register for a new account
+can edit own account
+can delete own account
+can create a visible interest group for a specific date/time and location
+can create an invisible interest group for a specific date/time and location
+can invite members to own created groups
+can edit own created groups
+can give another user the right to invite members to own created group
+can add another user as friend so that later invitations are easier
+can search for users
+can search for visible interest-groups
+can enter/sign up for visible interest-groups
+can look at and navigate through own calender to see planned meetups
+
+role: admin
+can edit users
+can delete users
+can make a user to an admin
+can create a new interest/topic
+can edit interests/topics
+can delete interests/topics
+can edit groups
+can delete groups
